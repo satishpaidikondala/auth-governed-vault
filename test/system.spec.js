@@ -87,7 +87,7 @@ describe("Vault System", function () {
 
     await vault.connect(user).withdraw(user.address, amount, nonce, signature);
 
-    // This should fail with the specific AuthManager error
+    // FIX: Verify exact revert reason from AuthorizationManager.sol
     await expect(
       vault.connect(user).withdraw(user.address, amount, nonce, signature)
     ).to.be.revertedWith("Auth: Authorization already used");
