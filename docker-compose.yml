@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  blockchain_system:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8545:8545" # Expose RPC
+    environment:
+      - HARDHAT_NETWORK=localhost
